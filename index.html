@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="todo-app">
-            <h2>To-Do List <img src="list icon.png" alt=""></h2>
+            <h2>To-Do List <img src="list icon.jpeg" alt=""></h2>
             <div class="row">
                 <input type="text" id="input-box" placeholder="Add Your Text">
                 <button onclick="addTask()">Add</button>
@@ -21,7 +21,26 @@
             </ul>
         </div>
     </div>
-    <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD-oIL0JuEbIl7HEzCQ1mpRCbFsMoVEzEY",
+    authDomain: "application-e3c4c.firebaseapp.com",
+    projectId: "application-e3c4c",
+    storageBucket: "application-e3c4c.firebasestorage.app",
+    messagingSenderId: "638378172866",
+    appId: "1:638378172866:web:ea751881c7338488d7b65b",
+    measurementId: "G-YENWCHSNHH"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  window.db = getFirestore(app);
+</script>
+
+<script type="module" src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
